@@ -1,4 +1,4 @@
-/***----FUNCTIONALITIES
+/***----STACK ALGORITHM FUNCTIONALITIES
  * push: add to the stack.
  * pop: remove from the stack
  * size: number of items in the stack
@@ -14,7 +14,7 @@ class Stack{
     push = (value) => {
         this.storage[this.count] = value;
         this.count++;
-        log(`${value} has been added to stack`)
+        log(`${value} has been added to stack`);
     }
 
     pop = () => {
