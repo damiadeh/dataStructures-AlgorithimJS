@@ -2,7 +2,7 @@
  * join: join to the queue.
  * leave: leave the queue
  * size: number of items in the queue
- * peek: returns the item on in front of the queue
+ * front: returns the item on in front of the queue
  */
 
 var log = console.log;
@@ -13,13 +13,13 @@ class Queue{
         this.storage = {};
     }
 
-    join = (value) => {
+    enqueue = (value) => {
         this.storage[this.count] = value;
         this.count++;
         log(`${value} has joined to queue`);
     }
 
-    leave = () => {
+    dequeue = () => {
         if(this.count === 0) return "stack is empty. Add first!";
         this.count--;
         this.firstInQueue++
@@ -32,21 +32,36 @@ class Queue{
         return this.count;
     }
 
-    peek = () => {
+    first = () => {
         return this.storage[this.firstInQueue];
+    }
+
+    isEmpty = () => {
+        return this.count === 0;
     }
  }
 
  
 var queue = new Queue();
-queue.join("Mike");
-queue.join("Dami");
-queue.join(1345);
-queue.join("Dex");
+queue.enqueue("Mike");
+queue.enqueue("Dami");
+queue.enqueue(1345);
+queue.enqueue("Dex");
 log(queue.storage);
 log("----------");
-log(queue.leave());
+log(queue.dequeue());
 log(queue.size());
-log(queue.peek());
+log(queue.first());
 log("-----Current Queue-----");
 log(queue.storage);
+
+
+// PRIORITY QUEUE
+
+class PriorityQueue {
+    constructor(){
+        this.collection = []
+    }
+
+    //to be done
+}
